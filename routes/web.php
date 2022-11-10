@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Backend\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\IndexController;
 
@@ -15,6 +16,9 @@ use App\Http\Controllers\Frontend\IndexController;
 */
 
 Route::get('/', [IndexController::class, 'home'])->name('home');
+Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])
+->name('admin.dashboard')
+->middleware('auth');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
