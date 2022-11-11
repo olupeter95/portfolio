@@ -9,6 +9,6 @@ class Dashboard
 {
     public function handle(): View|Factory
     {
-        return view('backend.master');
+        return view('backend.pages.home');
     }
 }
