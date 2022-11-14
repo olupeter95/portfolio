@@ -26,7 +26,7 @@ class AboutRequest extends FormRequest
         return [
             'title' => ['required', 'max:256'],
             'description' => ['required'],
-            'profile_photo' => ['required', 'max:2048']
+            'profile_photo' => ['max:2048']
         ];
     }
 
@@ -35,7 +35,7 @@ class AboutRequest extends FormRequest
         return [
             'title.required' => 'this field is required',
             'description.required' => 'this field is required',
-            'profile_photo' => 'this field is required',
+            'profile_photo.max' => 'file cannot exceed 2mb',
         ];
     }
 }

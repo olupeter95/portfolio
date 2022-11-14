@@ -24,6 +24,8 @@ Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])
 Route::prefix('/admin/about')->group(function () {
     Route::get('all', [AboutController::class, 'viewAbout'])->name('about.view');
     Route::post('add', [AboutController::class, 'storeAbout'])->name('about.store');
+    Route::get('edit/{id}', [AboutController::class, 'editAbout'])->name('about.edit');
+    Route::post('update', [AboutController::class, 'updateAbout'])->name('about.update');
 });
 
 Route::get('/dashboard', function () {

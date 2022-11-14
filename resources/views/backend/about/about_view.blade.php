@@ -25,10 +25,10 @@
                                     <img src="{{ asset('storage/upload/photos/about/'.$about->profile_photo)}}" alt=""
                                     style="width:50px;height:50px">    
                                 </td>
-                                <td>{{ $about->description }}</td>
                                 <td>{{ $about->title }}</td>
+                                <td>{{ $about->description }}</td>
                                 <td>
-                                    <a href="" class="btn btn-primary btn-sm">
+                                    <a href="{{ route('about.edit',$about->id) }}" class="btn btn-primary btn-sm">
                                         <i class="mdi mdi-pencil"></i>&nbsp; Edit
                                     </a>
                                     <a href="" class="btn btn-danger btn-sm">
