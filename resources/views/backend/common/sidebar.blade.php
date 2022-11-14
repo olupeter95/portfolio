@@ -41,7 +41,6 @@
                          <li >
                               <a class="sidenav-item-link" href="{{ route('about.view') }}">
                                 <span class="nav-text">All About</span>
-                                
                               </a>
                             </li>
                           

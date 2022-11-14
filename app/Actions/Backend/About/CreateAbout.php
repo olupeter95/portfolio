@@ -22,6 +22,10 @@ class CreateAbout
             'profile_photo' => $name,
             'created_at' => Carbon::now(),
         ]);
-        return redirect()->back();
+        $notfication = [
+            'message' => 'About Added Successfully',
+            'alert-type' => 'success',
+        ];
+        return redirect()->back()->with($notfication);
     }
 }

@@ -57,7 +57,7 @@
                         </div>
                         <div class="form-group">
                             <label for="description">Description</label>
-                            <textarea type="text"  rows="6" name="description" class="form-control" placeholder="description"></textarea>
+                            <textarea type="text"  rows="5" name="description" class="form-control" placeholder="description"></textarea>
                             @error('description')
                                 <span class="text-danger">{{$message}}</span>
                             @enderror
