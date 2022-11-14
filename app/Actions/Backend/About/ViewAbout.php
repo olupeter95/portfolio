@@ -10,7 +10,7 @@ class ViewAbout
 {
     public function handle(): View|Factory
     {
-        $about = About::latest()->get();
-        return view('backend.about.about_view', compact('about'));
+        $abouts = About::latest()->get();
+        return view('backend.about.about_view', compact('abouts'));
     }
 }

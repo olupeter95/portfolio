@@ -12,28 +12,31 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th scope="col">#</th>
                                 <th scope="col">Image</th>
                                 <th scope="col">Title</th>
                                 <th scope="col">Description</th>
-                                <th scope="col">Action</th>
+                                <th scope="col" width="30%">Action</th>
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach($abouts as $about)
                             <tr>
-                                <td scope="row">1</td>
-                                <td>Lucia</td>
-                                <td>Christ</td>
-                                <td>@Lucia</td>
                                 <td>
-                                    <a href="" class="btn btn-primary">
+                                    <img src="{{ asset('storage/upload/photos/about/'.$about->profile_photo)}}" alt=""
+                                    style="width:50px;height:50px">    
+                                </td>
+                                <td>{{ $about->description }}</td>
+                                <td>{{ $about->title }}</td>
+                                <td>
+                                    <a href="" class="btn btn-primary btn-sm">
                                         <i class="mdi mdi-pencil"></i>&nbsp; Edit
                                     </a>
-                                    <a href="" class="btn btn-danger">
+                                    <a href="" class="btn btn-danger btn-sm">
                                         <i class="mdi mdi-delete"></i>&nbsp; Delete
                                     </a>
                                 </td>
                             </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
