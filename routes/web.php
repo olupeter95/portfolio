@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Backend\AboutController;
 use App\Http\Controllers\Backend\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\IndexController;
@@ -19,6 +20,11 @@ Route::get('/', [IndexController::class, 'home'])->name('home');
 Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])
 ->name('admin.dashboard')
 ->middleware('auth');
+
+Route::prefix('/admin/about')->group(function () {
+    Route::get('all', [AboutController::class, 'viewAbout'])->name('about.view');
+    Route::post('add', [AboutController::class, 'storeAbout'])->name('about.store');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
