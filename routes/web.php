@@ -26,6 +26,7 @@ Route::prefix('/admin/about')->group(function () {
     Route::post('add', [AboutController::class, 'storeAbout'])->name('about.store');
     Route::get('edit/{id}', [AboutController::class, 'editAbout'])->name('about.edit');
     Route::post('update', [AboutController::class, 'updateAbout'])->name('about.update');
+    Route::get('delete/{id}', [AboutController::class, 'deleteAbout'])->name('about.delete');
 });
 
 Route::get('/dashboard', function () {

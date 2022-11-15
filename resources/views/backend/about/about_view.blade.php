@@ -31,7 +31,7 @@
                                     <a href="{{ route('about.edit',$about->id) }}" class="btn btn-primary btn-sm">
                                         <i class="mdi mdi-pencil"></i>&nbsp; Edit
                                     </a>
-                                    <a href="" class="btn btn-danger btn-sm">
+                                    <a href="{{ route('about.delete',$about->id) }}" class="btn btn-danger btn-sm">
                                         <i class="mdi mdi-delete"></i>&nbsp; Delete
                                     </a>
                                 </td>

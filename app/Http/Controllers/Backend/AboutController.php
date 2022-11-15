@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Actions\Backend\About\CreateAbout;
-use App\Actions\Backend\About\EditAbout;
-use App\Actions\Backend\About\UpdateAbout;
-use App\Actions\Backend\About\ViewAbout;
-use App\Http\Controllers\Controller;
-use App\Http\Requests\AboutRequest;
+use App\Models\About;
 use Illuminate\Http\Request;
+use App\Http\Requests\AboutRequest;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
+use App\Actions\Backend\About\EditAbout;
+use App\Actions\Backend\About\ViewAbout;
+use App\Actions\Backend\About\CreateAbout;
+use App\Actions\Backend\About\DeleteAbout;
+use App\Actions\Backend\About\UpdateAbout;
 
 class AboutController extends Controller
 {
@@ -53,6 +56,13 @@ class AboutController extends Controller
         return $editAbout->handle($id);
     }
 
+    /**
+     * Undocumented function
+     *
+     * @param AboutRequest $request
+     * @param UpdateAbout $updateAbout
+     * @return void
+     */
     public function updateAbout(
         AboutRequest $request,
         UpdateAbout $updateAbout
@@ -64,5 +74,13 @@ class AboutController extends Controller
             'alert-type' => 'success',
         ];
         return redirect()->route('about.view')->with($notification);
+    }
+
+    public function deleteAbout(
+        int $id,
+        DeleteAbout $deleteAbout
+    )
+    {
+        return $deleteAbout->handle($id);    
     }
 }
