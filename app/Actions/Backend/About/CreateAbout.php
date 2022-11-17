@@ -6,10 +6,12 @@ use Carbon\Carbon;
 use App\Models\About;
 use App\Http\Requests\AboutRequest;
 use Intervention\Image\Facades\Image;
+use Illuminate\Routing\Redirector;
+use Illuminate\Http\RedirectResponse;
 
 class CreateAbout
 {
-    public function handle(AboutRequest $request)
+    public function handle(AboutRequest $request): Redirector|RedirectResponse
     {
         $file = $request->file('profile_photo');
         $img = Image::make($file);

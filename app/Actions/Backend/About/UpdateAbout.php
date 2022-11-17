@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Storage;
 
 class UpdateAbout
 {
-    public function handle(AboutRequest $request)
+    public function handle(AboutRequest $request): About
     {
         $id = $request->id;
         $old_image = $request->old_image;

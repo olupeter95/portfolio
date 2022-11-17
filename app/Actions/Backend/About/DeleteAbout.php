@@ -4,10 +4,11 @@ namespace App\Actions\Backend\About;
 
 use App\Models\About;
 use Illuminate\Support\Facades\Storage;
-
+use Illuminate\Routing\Redirector;
+use Illuminate\Http\RedirectResponse;
 class DeleteAbout
 {
-    public function handle(int $id)
+    public function handle(int $id): Redirector|RedirectResponse
     {
         $about = About::findorFail($id);
         $img = $about->profile_photo;

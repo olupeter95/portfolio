@@ -33,8 +33,9 @@
 
           </div>
 
-          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+          <div class="col-lg-7 mt-5 mt-lg-0 align-items-stretch">
+            <form action="{{ route('contact.store') }}" method="post">
+              @csrf
               <div class="row">
                 <div class="form-group col-md-6">
                   <label for="name">Your Name</label>
@@ -45,20 +46,18 @@
                   <input type="email" class="form-control" name="email" id="email" required>
                 </div>
               </div>
-              <div class="form-group">
+              <div class="form-group mt-2">
                 <label for="name">Subject</label>
                 <input type="text" class="form-control" name="subject" id="subject" required>
               </div>
-              <div class="form-group">
+              <div class="form-group mt-2">
                 <label for="name">Message</label>
                 <textarea class="form-control" name="message" rows="10" required></textarea>
               </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
+              <div class="my-3"></div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary ntn-block">Send Message</button>
               </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
             </form>
           </div>
 

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Backend\AboutController;
 use App\Http\Controllers\Backend\AdminController;
+use App\Http\Controllers\Frontend\ContactController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\IndexController;
 
@@ -28,6 +29,9 @@ Route::prefix('/admin/about')->group(function () {
     Route::post('update', [AboutController::class, 'updateAbout'])->name('about.update');
     Route::get('delete/{id}', [AboutController::class, 'deleteAbout'])->name('about.delete');
 });
+
+Route::post('/guest/contact', [ContactController::class, 'storeContact'])->name('contact.store');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
