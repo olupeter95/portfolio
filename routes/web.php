@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Backend\AboutController;
 use App\Http\Controllers\Backend\AdminController;
+use App\Http\Controllers\Backend\AdminContactController;
 use App\Http\Controllers\Frontend\ContactController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\IndexController;
@@ -28,6 +29,14 @@ Route::prefix('/admin/about')->group(function () {
     Route::get('edit/{id}', [AboutController::class, 'editAbout'])->name('about.edit');
     Route::post('update', [AboutController::class, 'updateAbout'])->name('about.update');
     Route::get('delete/{id}', [AboutController::class, 'deleteAbout'])->name('about.delete');
+});
+
+Route::prefix('/admin/contact')->group(function () {
+    Route::get('all', [AdminContactController::class, 'viewContact'])->name('contact.view');
+    Route::post('add', [AboutController::class, 'storeAbout'])->name('about.store');
+    Route::get('edit/{id}', [AboutController::class, 'editAbout'])->name('about.edit');
+    Route::post('update', [AboutController::class, 'updateAbout'])->name('about.update');
+    Route::get('delete/{id}', [AdminContactController::class, 'deleteContact'])->name('contact.delete');
 });
 
 Route::post('/guest/contact', [ContactController::class, 'storeContact'])->name('contact.store');

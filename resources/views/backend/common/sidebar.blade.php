@@ -47,6 +47,25 @@
                       </div>
                     </ul>
                 </li>
+                <li  class="has-sub" >
+                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#contact"
+                      aria-expanded="false" aria-controls="contact">
+                      <i class="mdi mdi-information-outline"></i>
+                      <span class="nav-text">Contact</span> <b class="caret"></b>
+                    </a>
+                    <ul  class="collapse"  id="contact"
+                      data-parent="#sidebar-menu">
+                      <div class="sub-menu">
+                        
+                         <li >
+                              <a class="sidenav-item-link" href="{{ route('contact.view') }}">
+                                <span class="nav-text">All Contact</span>
+                              </a>
+                            </li>
+                          
+                      </div>
+                    </ul>
+                </li>
                 
 
               </ul>
