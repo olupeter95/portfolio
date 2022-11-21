@@ -67,6 +67,25 @@
                     </ul>
                 </li>
                 
+                <li  class="has-sub" >
+                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#setting"
+                      aria-expanded="false" aria-controls="setting">
+                      <i class="mdi mdi-information-outline"></i>
+                      <span class="nav-text">Skills</span> <b class="caret"></b>
+                    </a>
+                    <ul  class="collapse"  id="setting"
+                      data-parent="#sidebar-menu">
+                      <div class="sub-menu">
+                        
+                         <li >
+                              <a class="sidenav-item-link" href="{{ route('skill.view') }}">
+                                <span class="nav-text">All Skills</span>
+                              </a>
+                            </li>
+                          
+                      </div>
+                    </ul>
+                </li>
 
               </ul>
 

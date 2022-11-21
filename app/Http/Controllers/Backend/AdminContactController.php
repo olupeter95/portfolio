@@ -10,7 +10,6 @@ use Illuminate\Http\Request;
 class AdminContactController extends Controller
 {
     public function viewContact(
-        int $id,
         ViewContact $viewContact
     )
     {

@@ -3,6 +3,8 @@
 use App\Http\Controllers\Backend\AboutController;
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\AdminContactController;
+use App\Http\Controllers\Backend\SettingController;
+use App\Http\Controllers\Backend\SkillController;
 use App\Http\Controllers\Frontend\ContactController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\IndexController;
@@ -33,10 +35,15 @@ Route::prefix('/admin/about')->group(function () {
 
 Route::prefix('/admin/contact')->group(function () {
     Route::get('all', [AdminContactController::class, 'viewContact'])->name('contact.view');
-    Route::post('add', [AboutController::class, 'storeAbout'])->name('about.store');
-    Route::get('edit/{id}', [AboutController::class, 'editAbout'])->name('about.edit');
-    Route::post('update', [AboutController::class, 'updateAbout'])->name('about.update');
     Route::get('delete/{id}', [AdminContactController::class, 'deleteContact'])->name('contact.delete');
+});
+
+Route::prefix('/admin/skill')->group(function () {
+    Route::get('all', [SkillController::class, 'viewSkill'])->name('skill.view');
+    Route::get('edit/{id}', [SkillController::class, 'editSkill'])->name('skill.edit');
+    Route::post('update', [SkillController::class, 'updateSkill'])->name('skill.update');
+    Route::post('store', [SkillController::class, 'storeSkill'])->name('skill.store');
+    Route::get('delete/{id}', [SkillController::class, 'deleteSkill'])->name('skill.delete');
 });
 
 Route::post('/guest/contact', [ContactController::class, 'storeContact'])->name('contact.store');
