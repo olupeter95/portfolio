@@ -3,6 +3,7 @@
 use App\Http\Controllers\Backend\AboutController;
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\AdminContactController;
+use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\SettingController;
 use App\Http\Controllers\Backend\SkillController;
 use App\Http\Controllers\Frontend\ContactController;
@@ -31,6 +32,14 @@ Route::prefix('/admin/about')->group(function () {
     Route::get('edit/{id}', [AboutController::class, 'editAbout'])->name('about.edit');
     Route::post('update', [AboutController::class, 'updateAbout'])->name('about.update');
     Route::get('delete/{id}', [AboutController::class, 'deleteAbout'])->name('about.delete');
+});
+
+Route::prefix('/admin/category')->group(function () {
+    Route::get('all', [CategoryController::class, 'viewCategory'])->name('category.view');
+    Route::post('add', [CategoryController::class, 'storeCategory'])->name('category.store');
+    Route::get('edit/{id}', [CategoryController::class, 'editCategory'])->name('category.edit');
+    Route::post('update', [CategoryController::class, 'updateCategory'])->name('category.update');
+    Route::get('delete/{id}', [CategoryController::class, 'deleteCategory'])->name('category.delete');
 });
 
 Route::prefix('/admin/contact')->group(function () {

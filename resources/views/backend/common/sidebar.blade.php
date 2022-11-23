@@ -87,6 +87,26 @@
                     </ul>
                 </li>
 
+                <li  class="has-sub" >
+                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#category"
+                      aria-expanded="false" aria-controls="category">
+                      <i class="mdi mdi-information-outline"></i>
+                      <span class="nav-text">Category</span> <b class="caret"></b>
+                    </a>
+                    <ul  class="collapse"  id="category"
+                      data-parent="#sidebar-menu">
+                      <div class="sub-menu">
+                        
+                         <li >
+                              <a class="sidenav-item-link" href="{{ route('category.view') }}">
+                                <span class="nav-text">All Category</span>
+                              </a>
+                            </li>
+                          
+                      </div>
+                    </ul>
+                </li>
+
               </ul>
 
             </div>
