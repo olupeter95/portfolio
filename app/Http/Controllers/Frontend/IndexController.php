@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\About;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Skill;
 
 class IndexController extends Controller
 {
@@ -13,6 +14,7 @@ class IndexController extends Controller
     {
         $about = About::first();
         $user = User::first();
-        return view('frontend.index', compact('about', 'user'));
+        $skills = Skill::orderBy('name', 'DESC')->get();
+        return view('frontend.index', compact('about', 'user', 'skills'));
     }
 }
